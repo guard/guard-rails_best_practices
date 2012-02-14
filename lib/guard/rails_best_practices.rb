@@ -54,6 +54,8 @@ module Guard
       cmd += ' --spec'     if options[:spec]
       cmd += ' --test'     if options[:test]
       cmd += ' --features' if options[:features]
+      cmd += ' --output-file ' + options[:output_file] if options[:output_file]
+      cmd += ' --format ' + options[:format]           if options[:format]
       cmd += " --exclude #{options[:exclude]}" unless options[:exclude].blank?
       @result = system(cmd)
 
